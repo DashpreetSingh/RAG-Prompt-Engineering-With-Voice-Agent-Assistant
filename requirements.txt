@@ -1,0 +1,7 @@
+faiss-cpu
+openai==0.28
+python-dotenv
+docx
+SpeechRecognition
+pyttsx3
+pyaudio
