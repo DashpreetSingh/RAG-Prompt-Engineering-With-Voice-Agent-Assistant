@@ -56,14 +56,14 @@ class QueryHandler:
             final_prompt = (
                 f"Context:\n{relevant_data}\n\n"
                 f"User Query:\n{prompt}\n\n"
-                """Instruction: Based on the given context, generate a response about the Ketto donation campaigns.,
+                """Instruction: Based on the given context, generate a response.,
                 """
             )
 
             response = openai.ChatCompletion.create(
                 model="gpt-4o-2024-08-06",
                 messages=[
-                    {"role": "system", "content": "You are a donation campaign assistant focused on encouraging users to support noble causes via Ketto SIP."},
+                    {"role": "system", "content": "You are a helpfull assistant."},
                     {"role": "user", "content": final_prompt}
                 ],
                 max_tokens=400,
@@ -91,8 +91,7 @@ if __name__ == "__main__":
     try:
         handler = QueryHandler()
         #prompting
-        # prompt = "How to start conversation with donar?"
-        prompt = "what is women pitch?"
+        prompt = "what is pitch?"
         print("prompt: ",prompt)
         response = handler.generate_response(prompt, k=3)
         print("response: ", response)
